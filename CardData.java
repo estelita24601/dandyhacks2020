@@ -3,7 +3,7 @@ import java.time.format.DateTimeFormatter;
 
 public class CardData{
     private int IDNumber;
-    private DateTime lastCheck;
+    private LocalDateTime lastCheck;
 
     public int getID(){
         return IDNumber;
@@ -13,18 +13,30 @@ public class CardData{
         this.IDNumber = inputID;
     }
 
-    public DateTime getLastCheck(){
+    public LocalDateTime getLastCheck(){
         return lastCheck;
     }
 
-    public void setLastCheck(DateTime lastCheck){
+    public void setLastCheck(LocalDateTime lastCheck){
         this.lastCheck = lastCheck;
     }
 
     //constructors
-    public cardData(int ID, DateTime lastUse){
+    public CardData(int ID, LocalDateTime lastUse){
         setID(ID);
         setLastCheck(lastUse);
+    }
+
+    public CardData(int ID){
+        setID(ID);
+    }
+
+    public CardData(LocalDateTime lastUse){
+        setLastCheck(lastUse);
+    }
+
+    public CardData(){
+        ;
     }
 
     //the only way I can see what my debugger doesn't like is if I have a main ignore this
